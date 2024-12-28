@@ -1,0 +1,6 @@
+class Solution(object):
+    def lengthOfLastWord(self, s):
+      return len(s.strip().split()[-1]) 
+
+# The strip method removes all the trailing spaces, and the split method splits the string into substrings, and the "-1" is what accesses the last word in the list. 
+        

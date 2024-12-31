@@ -1,0 +1,7 @@
+def twoSum(nums, target):
+    d = {} # dictionary to store the index of the number
+    for i, num in enumerate(nums): # enumerate() returns the index and the value of the list
+        if target - num in d:
+            return [d[target - num], i] # return the index of the two numbers
+        d[num] = i
+    return []

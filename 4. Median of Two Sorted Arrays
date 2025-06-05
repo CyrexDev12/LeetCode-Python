@@ -1,0 +1,36 @@
+class Solution:
+    def findMedianSortedArrays(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        """
+        sorted_array = self.merge_sort_arrays(nums1, nums2)
+        n = len(sorted_array)
+
+        if n % 2 != 0:
+            return sorted_array[n // 2]
+        else:
+            return (sorted_array[n // 2] + sorted_array[(n - 1) // 2]) / 2.0
+
+    def merge_sort_arrays(self, arr1, arr2):
+        merged = []
+        i = 0
+        j = 0
+
+        while i < len(arr1) and j < len(arr2):
+            if arr1[i] < arr2[j]:
+                merged.append(arr1[i])
+                i += 1
+            else:
+                merged.append(arr2[j])
+                j += 1
+
+        while i < len(arr1):
+            merged.append(arr1[i])
+            i += 1
+        while j < len(arr2):
+            merged.append(arr2[j])
+            j += 1
+
+        return merged

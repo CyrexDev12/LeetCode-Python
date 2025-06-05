@@ -1,0 +1,6 @@
+class Solution(object):
+    def squareIsWhite(self, s):
+        column = ord(s[0]) - ord('a')  # Convert 'a'-'h' to 0-7
+        row = int(s[1]) - 1            # Convert '1'-'8' to 0-7
+
+        return (column + row) % 2 != 0  # True if white, False if black

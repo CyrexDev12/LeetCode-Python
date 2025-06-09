@@ -1,0 +1,15 @@
+class Solution(object):
+    def missingNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+## Best solution O(N) using Gauss's formula
+        ExpectedSum = len(nums) * (len(nums) + 1) / 2
+        actualSum = 0
+
+        for i, num in enumerate(nums):
+            actualSum += num
+        return ExpectedSum - actualSum
+        

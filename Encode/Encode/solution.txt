@@ -1,0 +1,2 @@
+In an interview this is how I would describe implementation. In the encode function we take the list of strings and for each string we append the length of it first then apply a delimiter to separate each string in the list. 
+In the decode function we use a two pointer approach i,j. Where i is the current index iterating through the length of the str, and j moves forward until the delimeter is found. Then we take the length of the string in turn which we use to get the substring from the str, and create the list again.
